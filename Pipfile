@@ -4,7 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-websocket = "*"
+requests = "*"
+websocket-client = "*"
+python-dateutil = "*"
+colorful = "*"
+pyinstaller = "*"
 
 [dev-packages]
 
