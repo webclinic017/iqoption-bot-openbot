@@ -43,7 +43,9 @@ jogadores = 1000 # Número de Jogadores a se Coletar
 #### Parâmetros Busca Entradas #####
 tipoD = 'live-deal-digital-option' # Digital
 tipoB = 'live-deal-binary-option-placed' # Binária
-valormin = 20 # Define o valor mínimo da entrada a se copiar
+valormin = 1 # Define o valor mínimo da entrada a se copiar
+_type = "binary" #"turbo"/"binary"
+buffersize = 10
 ####################################
 #### Parâmetro Gerais IQ Option ####
 user = userdata.LoginData
@@ -191,7 +193,7 @@ def ajustesEntradaDigital(ti):
 
 	global lastplayer
 
-	trades = API.get_live_deal(ti)
+	trades = API.get_live_deal(ti, par, _type)
 	print("Analisando "+str(len(trades))+" jogadas!")
 
 	for trade in list(trades):
@@ -254,7 +256,7 @@ def ajustesEntradaBinaria(ti):
 
 	global lastplayer
 
-	trades = API.get_live_deal(ti)
+	trades = API.get_live_deal(ti, par, _type)
 	print("Analisando "+str(len(trades))+" jogadas!")
 
 	for trade in list(trades):
@@ -310,8 +312,8 @@ def ajustesEntradaBinaria(ti):
 
 
 ####### Main Boot IQ Option #######
-API.subscribe_live_deal(tipoB, 10)
-API.subscribe_live_deal(tipoD, 10)
+API.subscribe_live_deal(tipoB, par, _type, buffersize)
+API.subscribe_live_deal(tipoD, par, _type, buffersize)
 
 print("Aguarde, catalogando Ranking ("+str(jogadores)+") jogadores.")
 catalogo = Thread(target=filtroRanking, args=(pais, jogadores))

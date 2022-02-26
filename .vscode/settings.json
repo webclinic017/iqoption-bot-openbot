@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "/home/julian/.local/share/virtualenvs/iqoption-bot-openbot-Qtq4o0_z/bin/python"
+    "python.pythonPath": "/home/julian/.local/share/virtualenvs/iqoption-bot-openbot-Qtq4o0_z/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }

@@ -1,6 +1,6 @@
 # user dictionary
 
 LoginData = {
-    'username': "seuemail@dominio.com.br",
-    'password': "P@ssw0rd"
+    'username': "julian.santos.trash@gmail.com",
+    'password': "mypassisiqoption"
 }
